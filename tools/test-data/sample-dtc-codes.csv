@@ -1,0 +1,16 @@
+code,codeType,description,severity
+P0301,P,Cylinder 1 Misfire Detected,high
+P0302,P,Cylinder 2 Misfire Detected,high
+P0303,P,Cylinder 3 Misfire Detected,high
+P0304,P,Cylinder 4 Misfire Detected,high
+P0420,P,Catalyst System Efficiency Below Threshold,medium
+P0171,P,System Too Lean (Bank 1),medium
+P0172,P,System Too Rich (Bank 1),medium
+P0128,P,Coolant Thermostat (Coolant Temperature Below Thermostat Regulating Temperature),low
+P0455,P,EVAP System Leak,medium
+B1234,B,Body Control Module Code,low
+B1235,B,Body Control Module Code,low
+C1201,C,Chassis Control Code,low
+C1202,C,Chassis Control Code,low
+U0100,U,Network Communication Code,high
+U0101,U,Network Communication Code,high

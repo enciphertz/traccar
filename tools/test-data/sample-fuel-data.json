@@ -1,0 +1,125 @@
+{
+  "description": "Sample fuel consumption test scenarios",
+  "scenarios": [
+    {
+      "name": "City Driving",
+      "deviceId": "123456789012345",
+      "startTime": "2024-01-01T08:00:00Z",
+      "endTime": "2024-01-01T09:00:00Z",
+      "distance": 25.5,
+      "fuelConsumption": 3.2,
+      "fuelEconomy": 7.97,
+      "averageSpeed": 25.5,
+      "positions": [
+        {
+          "timestamp": "2024-01-01T08:00:00Z",
+          "lat": 40.7128,
+          "lon": -74.0060,
+          "speed": 30,
+          "fuelConsumption": 8.5,
+          "rpm": 2000,
+          "engineLoad": 40
+        },
+        {
+          "timestamp": "2024-01-01T08:30:00Z",
+          "lat": 40.7200,
+          "lon": -74.0100,
+          "speed": 25,
+          "fuelConsumption": 7.8,
+          "rpm": 1800,
+          "engineLoad": 35
+        },
+        {
+          "timestamp": "2024-01-01T09:00:00Z",
+          "lat": 40.7300,
+          "lon": -74.0150,
+          "speed": 0,
+          "fuelConsumption": 0,
+          "rpm": 0,
+          "engineLoad": 0
+        }
+      ]
+    },
+    {
+      "name": "Highway Driving",
+      "deviceId": "123456789012345",
+      "startTime": "2024-01-01T10:00:00Z",
+      "endTime": "2024-01-01T11:00:00Z",
+      "distance": 100.0,
+      "fuelConsumption": 6.5,
+      "fuelEconomy": 15.38,
+      "averageSpeed": 100.0,
+      "positions": [
+        {
+          "timestamp": "2024-01-01T10:00:00Z",
+          "lat": 40.7300,
+          "lon": -74.0150,
+          "speed": 100,
+          "fuelConsumption": 6.5,
+          "rpm": 2500,
+          "engineLoad": 50
+        },
+        {
+          "timestamp": "2024-01-01T10:30:00Z",
+          "lat": 40.8000,
+          "lon": -74.1000,
+          "speed": 105,
+          "fuelConsumption": 6.8,
+          "rpm": 2600,
+          "engineLoad": 52
+        },
+        {
+          "timestamp": "2024-01-01T11:00:00Z",
+          "lat": 40.8700,
+          "lon": -74.2000,
+          "speed": 0,
+          "fuelConsumption": 0,
+          "rpm": 0,
+          "engineLoad": 0
+        }
+      ]
+    },
+    {
+      "name": "Idle Period",
+      "deviceId": "123456789012345",
+      "startTime": "2024-01-01T12:00:00Z",
+      "endTime": "2024-01-01T12:30:00Z",
+      "distance": 0.0,
+      "fuelConsumption": 0.5,
+      "fuelEconomy": 0.0,
+      "averageSpeed": 0.0,
+      "positions": [
+        {
+          "timestamp": "2024-01-01T12:00:00Z",
+          "lat": 40.8700,
+          "lon": -74.2000,
+          "speed": 0,
+          "fuelConsumption": 1.0,
+          "rpm": 800,
+          "engineLoad": 20,
+          "ignition": "true"
+        },
+        {
+          "timestamp": "2024-01-01T12:15:00Z",
+          "lat": 40.8700,
+          "lon": -74.2000,
+          "speed": 0,
+          "fuelConsumption": 1.0,
+          "rpm": 800,
+          "engineLoad": 20,
+          "ignition": "true"
+        },
+        {
+          "timestamp": "2024-01-01T12:30:00Z",
+          "lat": 40.8700,
+          "lon": -74.2000,
+          "speed": 0,
+          "fuelConsumption": 0,
+          "rpm": 0,
+          "engineLoad": 0,
+          "ignition": "false"
+        }
+      ]
+    }
+  ]
+}

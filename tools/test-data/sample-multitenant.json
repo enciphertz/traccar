@@ -1,0 +1,106 @@
+{
+  "description": "Multi-tenant test configuration with real supported devices",
+  "tenants": [
+    {
+      "name": "Acme Corporation",
+      "schemaName": "acme_corp",
+      "esyncTenantId": "esync-acme-001",
+      "active": true,
+      "devices": [
+        {
+          "name": "Acme Vehicle 1",
+          "uniqueId": "ACME001",
+          "esyncVehicleId": "esync-vehicle-acme-001",
+          "model": "Freematics Traccar Edition",
+          "protocol": "freematics",
+          "category": "car",
+          "supportsObd": true
+        },
+        {
+          "name": "Acme Vehicle 2",
+          "uniqueId": "ACME002",
+          "esyncVehicleId": "esync-vehicle-acme-002",
+          "model": "Freematics ONE+ Model A",
+          "protocol": "freematics",
+          "category": "car",
+          "supportsObd": true
+        }
+      ]
+    },
+    {
+      "name": "Beta Logistics",
+      "schemaName": "beta_logistics",
+      "esyncTenantId": "esync-beta-001",
+      "active": true,
+      "devices": [
+        {
+          "name": "Beta Vehicle 1",
+          "uniqueId": "BETA001",
+          "esyncVehicleId": "esync-vehicle-beta-001",
+          "model": "Freematics ONE+ Model B",
+          "protocol": "freematics",
+          "category": "car",
+          "supportsObd": true
+        },
+        {
+          "name": "Beta Vehicle 2",
+          "uniqueId": "BETA002",
+          "esyncVehicleId": "esync-vehicle-beta-002",
+          "model": "Freematics ONE+ Model H",
+          "protocol": "freematics",
+          "category": "car",
+          "supportsObd": true
+        }
+      ]
+    },
+    {
+      "name": "Gamma Transport",
+      "schemaName": "gamma_transport",
+      "esyncTenantId": "esync-gamma-001",
+      "active": true,
+      "devices": [
+        {
+          "name": "Gamma Vehicle 1",
+          "uniqueId": "GAMMA001",
+          "esyncVehicleId": "esync-vehicle-gamma-001",
+          "model": "TK103-2B",
+          "protocol": "gps103",
+          "category": "car",
+          "supportsObd": true
+        }
+      ]
+    }
+  ],
+  "testScenarios": [
+    {
+      "name": "Tenant Isolation Test",
+      "description": "Verify tenants cannot access each other's data",
+      "steps": [
+        "Create tenants with devices",
+        "Query devices with tenant1 context",
+        "Verify only tenant1 devices are returned",
+        "Query devices with tenant2 context",
+        "Verify only tenant2 devices are returned"
+      ]
+    },
+    {
+      "name": "Cross-Tenant Access Test",
+      "description": "Verify cross-tenant access is blocked",
+      "steps": [
+        "Get device ID from tenant1",
+        "Try to access device with tenant2 context",
+        "Verify access is denied or filtered"
+      ]
+    },
+    {
+      "name": "Schema Switching Test",
+      "description": "Verify PostgreSQL schema switching works",
+      "steps": [
+        "Create device with tenant1 context",
+        "Verify device is stored in tenant1 schema",
+        "Query device with tenant1 context",
+        "Verify device is accessible"
+      ]
+    }
+  ]
+}

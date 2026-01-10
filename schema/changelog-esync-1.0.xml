@@ -1,0 +1,248 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+  xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                      http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd"
+  logicalFilePath="changelog-esync-1.0">
+
+  <changeSet author="esync" id="esync-1.0-tenants">
+    <preConditions onFail="MARK_RAN">
+      <not>
+        <tableExists tableName="tc_tenants"/>
+      </not>
+    </preConditions>
+
+    <createTable tableName="tc_tenants">
+      <column autoIncrement="true" name="id" type="BIGINT">
+        <constraints primaryKey="true" nullable="false"/>
+      </column>
+      <column name="name" type="VARCHAR(255)">
+        <constraints nullable="false"/>
+      </column>
+      <column name="schema_name" type="VARCHAR(63)">
+        <constraints nullable="false" unique="true"/>
+      </column>
+      <column name="esync_tenant_id" type="VARCHAR(255)">
+        <constraints nullable="false" unique="true"/>
+      </column>
+      <column name="active" type="BOOLEAN" defaultValueBoolean="true">
+        <constraints nullable="false"/>
+      </column>
+      <column name="created_at" type="TIMESTAMP" defaultValueDate="CURRENT_TIMESTAMP">
+        <constraints nullable="false"/>
+      </column>
+      <column name="updated_at" type="TIMESTAMP" defaultValueDate="CURRENT_TIMESTAMP">
+        <constraints nullable="false"/>
+      </column>
+    </createTable>
+    
+    <createIndex indexName="tc_tenants_esync_tenant_id_idx" tableName="tc_tenants">
+      <column name="esync_tenant_id"/>
+    </createIndex>
+    
+    <createIndex indexName="tc_tenants_schema_name_idx" tableName="tc_tenants">
+      <column name="schema_name"/>
+    </createIndex>
+  </changeSet>
+
+  <changeSet author="esync" id="esync-1.0-device-tenant">
+    <preConditions onFail="MARK_RAN">
+      <not>
+        <columnExists tableName="tc_devices" columnName="tenant_id"/>
+      </not>
+    </preConditions>
+
+    <addColumn tableName="tc_devices">
+      <column name="tenant_id" type="BIGINT"/>
+      <column name="esync_vehicle_id" type="VARCHAR(255)"/>
+    </addColumn>
+    
+    <addForeignKeyConstraint
+      baseTableName="tc_devices"
+      baseColumnNames="tenant_id"
+      referencedTableName="tc_tenants"
+      referencedColumnNames="id"
+      constraintName="fk_devices_tenant"
+      onDelete="SET NULL"/>
+    
+    <createIndex indexName="tc_devices_tenant_id_idx" tableName="tc_devices">
+      <column name="tenant_id"/>
+    </createIndex>
+    
+    <createIndex indexName="tc_devices_esync_vehicle_id_idx" tableName="tc_devices">
+      <column name="esync_vehicle_id"/>
+    </createIndex>
+  </changeSet>
+
+  <changeSet author="esync" id="esync-1.0-obd-parameters">
+    <preConditions onFail="MARK_RAN">
+      <not>
+        <tableExists tableName="tc_obd_parameters"/>
+      </not>
+    </preConditions>
+
+    <createTable tableName="tc_obd_parameters">
+      <column autoIncrement="true" name="id" type="BIGINT">
+        <constraints primaryKey="true" nullable="false"/>
+      </column>
+      <column name="device_id" type="BIGINT">
+        <constraints nullable="false"/>
+      </column>
+      <column name="position_id" type="BIGINT">
+        <constraints nullable="false"/>
+      </column>
+      <column name="timestamp" type="TIMESTAMP">
+        <constraints nullable="false"/>
+      </column>
+      
+      <!-- Engine parameters -->
+      <column name="engine_rpm" type="INTEGER"/>
+      <column name="coolant_temperature" type="INTEGER"/>
+      <column name="oil_pressure" type="DOUBLE"/>
+      <column name="battery_voltage" type="DOUBLE"/>
+      <column name="throttle_position" type="INTEGER"/>
+      <column name="intake_air_temperature" type="INTEGER"/>
+      <column name="maf_air_flow" type="DOUBLE"/>
+      
+      <!-- Fuel parameters -->
+      <column name="fuel_level" type="INTEGER"/>
+      <column name="fuel_consumption_rate" type="DOUBLE"/>
+      <column name="fuel_pressure" type="DOUBLE"/>
+      
+      <!-- Vehicle parameters -->
+      <column name="vehicle_speed" type="INTEGER"/>
+      <column name="engine_load" type="INTEGER"/>
+      <column name="timing_advance" type="DOUBLE"/>
+    </createTable>
+    
+    <addForeignKeyConstraint
+      baseTableName="tc_obd_parameters"
+      baseColumnNames="device_id"
+      referencedTableName="tc_devices"
+      referencedColumnNames="id"
+      constraintName="fk_obd_parameters_device"
+      onDelete="CASCADE"/>
+    
+    <addForeignKeyConstraint
+      baseTableName="tc_obd_parameters"
+      baseColumnNames="position_id"
+      referencedTableName="tc_positions"
+      referencedColumnNames="id"
+      constraintName="fk_obd_parameters_position"
+      onDelete="CASCADE"/>
+    
+    <createIndex indexName="tc_obd_parameters_device_time_idx" tableName="tc_obd_parameters">
+      <column name="device_id"/>
+      <column name="timestamp"/>
+    </createIndex>
+    
+    <createIndex indexName="tc_obd_parameters_position_idx" tableName="tc_obd_parameters">
+      <column name="position_id"/>
+    </createIndex>
+  </changeSet>
+
+  <changeSet author="esync" id="esync-1.0-dtc-codes">
+    <preConditions onFail="MARK_RAN">
+      <not>
+        <tableExists tableName="tc_dtc_codes"/>
+      </not>
+    </preConditions>
+
+    <createTable tableName="tc_dtc_codes">
+      <column autoIncrement="true" name="id" type="BIGINT">
+        <constraints primaryKey="true" nullable="false"/>
+      </column>
+      <column name="device_id" type="BIGINT">
+        <constraints nullable="false"/>
+      </column>
+      <column name="position_id" type="BIGINT">
+        <constraints nullable="false"/>
+      </column>
+      <column name="timestamp" type="TIMESTAMP">
+        <constraints nullable="false"/>
+      </column>
+      
+      <column name="code" type="VARCHAR(10)">
+        <constraints nullable="false"/>
+      </column>
+      <column name="code_type" type="CHAR(1)"/>
+      <column name="description" type="VARCHAR(4000)"/>
+      <column name="status" type="VARCHAR(20)" defaultValue="active">
+        <constraints nullable="false"/>
+      </column>
+      <column name="freeze_frame_data" type="VARCHAR(4000)"/>
+      
+      <column name="first_occurred" type="TIMESTAMP"/>
+      <column name="last_occurred" type="TIMESTAMP"/>
+      <column name="cleared_at" type="TIMESTAMP"/>
+    </createTable>
+    
+    <addForeignKeyConstraint
+      baseTableName="tc_dtc_codes"
+      baseColumnNames="device_id"
+      referencedTableName="tc_devices"
+      referencedColumnNames="id"
+      constraintName="fk_dtc_codes_device"
+      onDelete="CASCADE"/>
+    
+    <createIndex indexName="tc_dtc_codes_device_idx" tableName="tc_dtc_codes">
+      <column name="device_id"/>
+    </createIndex>
+    
+    <createIndex indexName="tc_dtc_codes_status_idx" tableName="tc_dtc_codes">
+      <column name="status"/>
+    </createIndex>
+    
+    <createIndex indexName="tc_dtc_codes_code_idx" tableName="tc_dtc_codes">
+      <column name="code"/>
+    </createIndex>
+    
+    <createIndex indexName="tc_dtc_codes_device_code_status_idx" tableName="tc_dtc_codes">
+      <column name="device_id"/>
+      <column name="code"/>
+      <column name="status"/>
+    </createIndex>
+  </changeSet>
+
+  <changeSet author="esync" id="esync-1.0-fuel-consumption">
+    <preConditions onFail="MARK_RAN">
+      <not>
+        <tableExists tableName="tc_fuel_consumption"/>
+      </not>
+    </preConditions>
+
+    <createTable tableName="tc_fuel_consumption">
+      <column autoIncrement="true" name="id" type="BIGINT">
+        <constraints primaryKey="true" nullable="false"/>
+      </column>
+      <column name="device_id" type="BIGINT">
+        <constraints nullable="false"/>
+      </column>
+      <column name="start_time" type="TIMESTAMP">
+        <constraints nullable="false"/>
+      </column>
+      <column name="end_time" type="TIMESTAMP">
+        <constraints nullable="false"/>
+      </column>
+      <column name="fuel_consumption" type="DOUBLE"/>
+      <column name="distance" type="DOUBLE"/>
+      <column name="fuel_economy" type="DOUBLE"/>
+      <column name="fuel_cost" type="DOUBLE"/>
+    </createTable>
+    
+    <addForeignKeyConstraint
+      baseTableName="tc_fuel_consumption"
+      baseColumnNames="device_id"
+      referencedTableName="tc_devices"
+      referencedColumnNames="id"
+      constraintName="fk_fuel_consumption_device"
+      onDelete="CASCADE"/>
+    
+    <createIndex indexName="tc_fuel_consumption_device_time_idx" tableName="tc_fuel_consumption">
+      <column name="device_id"/>
+      <column name="start_time"/>
+    </createIndex>
+  </changeSet>
+
+</databaseChangeLog>

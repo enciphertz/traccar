@@ -159,8 +159,80 @@ assemble.dependsOn(copyDependencies)
 jar {
     manifest {
         attributes(
-                "Main-Class": "org.traccar.Main",
+                "Main-Class": "tz.co.esync.Main",
                 "Implementation-Version": "6.11.1",
                 "Class-Path": configurations.runtimeClasspath.files.collect { "lib/$it.name" }.join(" "))
     }
+}
+
+// Development debug tasks
+tasks.register('debug', JavaExec) {
+    description = 'Run the server in debug mode with hot swap enabled (attaches debugger on port 5005)'
+    group = 'application'
+    
+    dependsOn classes, copyDependencies
+    
+    mainClass = 'tz.co.esync.Main'
+    classpath = sourceSets.main.runtimeClasspath
+    
+    // Debug configuration - enables JPDA for hot swap
+    // Debug port: 5005 (standard Java debug port)
+    // suspend=false: Don't wait for debugger to attach (start immediately)
+    // server=true: Listen for debugger connections
+    debug = true
+    debugOptions {
+        enabled = true
+        port = 5005
+        server = true
+        suspend = false
+    }
+    
+    args = ['debug.xml']
+}
+
+tasks.register('run', JavaExec) {
+    description = 'Run the server in normal mode'
+    group = 'application'
+    
+    dependsOn classes, copyDependencies
+    
+    mainClass = 'tz.co.esync.Main'
+    classpath = sourceSets.main.runtimeClasspath
+    
+    args = ['debug.xml']
+}
+
+// Continuous build - automatically recompiles when files change
+// Usage: ./gradlew --continuous compileJava
+// Or in IDE: Run the debug task, then use continuous build in separate terminal
+tasks.register('watch') {
+    description = 'Alias for continuous build - watches for changes and recompiles automatically'
+    group = 'application'
+    
+    doLast {
+        println ""
+        println "=================================================================================="
+        println "Continuous Build Mode"
+        println "=================================================================================="
+        println ""
+        println "To enable automatic recompilation on file changes, use:"
+        println "  ./gradlew --continuous compileJava"
+        println ""
+        println "Or in your IDE:"
+        println "  1. Run './gradlew debug' to start the server in debug mode"
+        println "  2. In your IDE, enable 'Build automatically' or use continuous build"
+        println "  3. The IDE will automatically recompile changed files"
+        println "  4. With debug mode enabled, you can use hot swap to reload classes"
+        println ""
+        println "Note: Hot swap works for method body changes and some other changes."
+        println "Structural changes (new classes, method signatures) require a restart."
+        println ""
+        println "Press Ctrl+C to stop."
+        println ""
+    }
+}
+
+// Alias for continuous build
+tasks.named('build').configure {
+    description = 'Build the project'
 }

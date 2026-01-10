@@ -1,42 +1,75 @@
-# [Traccar](https://www.traccar.org)
+# E-Sync Telemetries Engine
 
 ## Overview
 
-Traccar is an open source GPS tracking system. This repository contains Java-based back-end service. It supports more than 200 GPS protocols and more than 2000 models of GPS tracking devices. Traccar can be used with any major SQL database system. It also provides easy to use [REST API](https://www.traccar.org/traccar-api/).
-
-Other parts of Traccar solution include:
-
-- [Traccar web app](https://github.com/traccar/traccar-web)
-- [Traccar Manager app](https://github.com/traccar/traccar-manager)
-
-There is also a set of mobile apps that you can use for tracking mobile devices:
-
-- [Traccar Client app](https://github.com/traccar/traccar-client)
+E-Sync Telemetries Engine is a comprehensive telemetry tracking system built for modern fleet and vehicle management. This repository contains the Java-based back-end service that powers E-Sync's telemetry platform. It supports more than 200 GPS protocols and more than 2000 models of GPS tracking devices. The engine can be used with any major SQL database system and provides a powerful REST API for integration.
 
 ## Features
 
 Some of the available features include:
 
 - Real-time GPS tracking
+- OBD (On-Board Diagnostics) data processing
+- DTC (Diagnostic Trouble Code) management
+- Fuel consumption and economy tracking
 - Driver behaviour monitoring
 - Detailed and summary reports
 - Geofencing functionality
 - Alarms and notifications
 - Account and device management
+- Multi-tenancy support
 - Email and SMS support
 
 ## Build
 
-Please read [build from source documentation](https://www.traccar.org/build/) on the official website.
+Please refer to the build documentation for instructions on building from source.
 
-## Team
+### Development Mode
 
-- Anton Tananaev ([anton@traccar.org](mailto:anton@traccar.org))
-- Andrey Kunitsyn ([andrey@traccar.org](mailto:andrey@traccar.org))
+For development, you can run the server in debug mode to enable hot swap and avoid multiple compilations:
+
+#### Running in Debug Mode
+
+```bash
+# Start the server in debug mode (enables hot swap on port 5005)
+./gradlew debug
+```
+
+This will:
+- Start the server with JPDA debug agent enabled on port **5005**
+- Enable hot swap for code changes (method body changes can be reloaded without restart)
+- Use the `debug.xml` configuration file
+
+#### Continuous Build (Auto-recompile on changes)
+
+To automatically recompile when files change, use continuous build:
+
+```bash
+# In a separate terminal, run continuous build
+./gradlew --continuous compileJava
+```
+
+This will watch for file changes and automatically recompile, allowing hot swap to pick up the changes.
+
+#### Using with IDE (IntelliJ IDEA / Eclipse / VS Code)
+
+1. **Run the debug task**: Execute `./gradlew debug` in a terminal
+2. **In your IDE**: 
+   - Enable "Build automatically" or "Compile on save"
+   - Most IDEs will detect the debug port (5005) automatically
+   - You can attach a debugger to `localhost:5005`
+   - Make code changes and save - hot swap will reload the classes automatically
+
+**Note**: 
+- Hot swap works for method body changes and some field changes
+- Structural changes (new classes, method signatures, etc.) require a server restart
+- The server runs with the `debug.xml` configuration file by default
 
 ## License
 
     Apache License, Version 2.0
+
+    Copyright 2025 Encipher Company Limited
 
     Licensed under the Apache License, Version 2.0 (the "License");
     you may not use this file except in compliance with the License.

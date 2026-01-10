@@ -1,0 +1,407 @@
+{
+  "description": "Sample OBD-capable devices from supported-devices.json",
+  "total_obd_devices": 247,
+  "sample_size": 50,
+  "devices": [
+    {
+      "device": "Freematics Traccar Edition",
+      "protocol": "freematics",
+      "port": 5170,
+      "recommended": true,
+      "category": "car",
+      "supportsObd": true
+    },
+    {
+      "device": "Freematics ONE+ Model A",
+      "protocol": "freematics",
+      "port": 5170,
+      "recommended": false,
+      "category": "car",
+      "supportsObd": true
+    },
+    {
+      "device": "Freematics ONE+ Model B",
+      "protocol": "freematics",
+      "port": 5170,
+      "recommended": false,
+      "category": "car",
+      "supportsObd": true
+    },
+    {
+      "device": "Freematics ONE+ Model H",
+      "protocol": "freematics",
+      "port": 5170,
+      "recommended": false,
+      "category": "car",
+      "supportsObd": true
+    },
+    {
+      "device": "TK103-2B",
+      "protocol": "gps103",
+      "port": 5001,
+      "recommended": false,
+      "category": "car",
+      "supportsObd": true
+    },
+    {
+      "device": "TK104",
+      "protocol": "gps103",
+      "port": 5001,
+      "recommended": false,
+      "category": "car",
+      "supportsObd": true
+    },
+    {
+      "device": "GPS-103",
+      "protocol": "gps103",
+      "port": 5001,
+      "recommended": false,
+      "category": "car",
+      "supportsObd": true
+    },
+    {
+      "device": "GPS-103-A",
+      "protocol": "gps103",
+      "port": 5001,
+      "recommended": false,
+      "category": "car",
+      "supportsObd": true
+    },
+    {
+      "device": "TW-MD1101",
+      "protocol": "gps103",
+      "port": 5001,
+      "recommended": false,
+      "category": "car",
+      "supportsObd": true
+    },
+    {
+      "device": "GPS102",
+      "protocol": "gps103",
+      "port": 5001,
+      "recommended": false,
+      "category": "car",
+      "supportsObd": true
+    },
+    {
+      "device": "GPS102B",
+      "protocol": "gps103",
+      "port": 5001,
+      "recommended": false,
+      "category": "car",
+      "supportsObd": true
+    },
+    {
+      "device": "GPS104",
+      "protocol": "gps103",
+      "port": 5001,
+      "recommended": false,
+      "category": "car",
+      "supportsObd": true
+    },
+    {
+      "device": "306A",
+      "protocol": "gps103",
+      "port": 5001,
+      "recommended": false,
+      "category": "car",
+      "supportsObd": true
+    },
+    {
+      "device": "TK-102B",
+      "protocol": "gps103",
+      "port": 5001,
+      "recommended": false,
+      "category": "car",
+      "supportsObd": true
+    },
+    {
+      "device": "GPS105B",
+      "protocol": "gps103",
+      "port": 5001,
+      "recommended": false,
+      "category": "car",
+      "supportsObd": true
+    },
+    {
+      "device": "Coban GPS106",
+      "protocol": "gps103",
+      "port": 5001,
+      "recommended": false,
+      "category": "car",
+      "supportsObd": true
+    },
+    {
+      "device": "Coban GPS107",
+      "protocol": "gps103",
+      "port": 5001,
+      "recommended": false,
+      "category": "car",
+      "supportsObd": true
+    },
+    {
+      "device": "Coban GPS301",
+      "protocol": "gps103",
+      "port": 5001,
+      "recommended": false,
+      "category": "car",
+      "supportsObd": true
+    },
+    {
+      "device": "Coban GPS302",
+      "protocol": "gps103",
+      "port": 5001,
+      "recommended": false,
+      "category": "car",
+      "supportsObd": true
+    },
+    {
+      "device": "Coban GPS303",
+      "protocol": "gps103",
+      "port": 5001,
+      "recommended": false,
+      "category": "car",
+      "supportsObd": true
+    },
+    {
+      "device": "Coban GPS304",
+      "protocol": "gps103",
+      "port": 5001,
+      "recommended": false,
+      "category": "car",
+      "supportsObd": true
+    },
+    {
+      "device": "Coban GPS305",
+      "protocol": "gps103",
+      "port": 5001,
+      "recommended": false,
+      "category": "car",
+      "supportsObd": true
+    },
+    {
+      "device": "Coban GPS306",
+      "protocol": "gps103",
+      "port": 5001,
+      "recommended": false,
+      "category": "car",
+      "supportsObd": true
+    },
+    {
+      "device": "A306",
+      "protocol": "gps103",
+      "port": 5001,
+      "recommended": false,
+      "category": "car",
+      "supportsObd": true
+    },
+    {
+      "device": "GPS303-G",
+      "protocol": "gps103",
+      "port": 5001,
+      "recommended": false,
+      "category": "car",
+      "supportsObd": true
+    },
+    {
+      "device": "Coban 303F",
+      "protocol": "gps103",
+      "port": 5001,
+      "recommended": false,
+      "category": "car",
+      "supportsObd": true
+    },
+    {
+      "device": "TK303B",
+      "protocol": "gps103",
+      "port": 5001,
+      "recommended": false,
+      "category": "car",
+      "supportsObd": true
+    },
+    {
+      "device": "TK303G",
+      "protocol": "gps103",
+      "port": 5001,
+      "recommended": false,
+      "category": "car",
+      "supportsObd": true
+    },
+    {
+      "device": "TZ-AVL02",
+      "protocol": "totem",
+      "port": 5007,
+      "recommended": false,
+      "category": "car",
+      "supportsObd": true
+    },
+    {
+      "device": "TZ-AVL03",
+      "protocol": "totem",
+      "port": 5007,
+      "recommended": false,
+      "category": "car",
+      "supportsObd": true
+    },
+    {
+      "device": "TZ-AVL05",
+      "protocol": "totem",
+      "port": 5007,
+      "recommended": false,
+      "category": "car",
+      "supportsObd": true
+    },
+    {
+      "device": "TZ-AVL08",
+      "protocol": "totem",
+      "port": 5007,
+      "recommended": false,
+      "category": "car",
+      "supportsObd": true
+    },
+    {
+      "device": "TZ-AVL09",
+      "protocol": "totem",
+      "port": 5007,
+      "recommended": false,
+      "category": "car",
+      "supportsObd": true
+    },
+    {
+      "device": "TZ-AVL10",
+      "protocol": "totem",
+      "port": 5007,
+      "recommended": false,
+      "category": "car",
+      "supportsObd": true
+    },
+    {
+      "device": "TZ-GT08",
+      "protocol": "totem",
+      "port": 5007,
+      "recommended": false,
+      "category": "car",
+      "supportsObd": true
+    },
+    {
+      "device": "TZ-GT09",
+      "protocol": "totem",
+      "port": 5007,
+      "recommended": false,
+      "category": "car",
+      "supportsObd": true
+    },
+    {
+      "device": "TZ-VN06",
+      "protocol": "totem",
+      "port": 5007,
+      "recommended": false,
+      "category": "car",
+      "supportsObd": true
+    },
+    {
+      "device": "AT03",
+      "protocol": "totem",
+      "port": 5007,
+      "recommended": false,
+      "category": "car",
+      "supportsObd": true
+    },
+    {
+      "device": "AT06",
+      "protocol": "totem",
+      "port": 5007,
+      "recommended": false,
+      "category": "car",
+      "supportsObd": true
+    },
+    {
+      "device": "AT06+",
+      "protocol": "totem",
+      "port": 5007,
+      "recommended": false,
+      "category": "car",
+      "supportsObd": true
+    },
+    {
+      "device": "AT07",
+      "protocol": "totem",
+      "port": 5007,
+      "recommended": false,
+      "category": "car",
+      "supportsObd": true
+    },
+    {
+      "device": "AT09",
+      "protocol": "totem",
+      "port": 5007,
+      "recommended": false,
+      "category": "car",
+      "supportsObd": true
+    },
+    {
+      "device": "TZ-AVL201",
+      "protocol": "totem",
+      "port": 5007,
+      "recommended": false,
+      "category": "car",
+      "supportsObd": true
+    },
+    {
+      "device": "GT06N",
+      "protocol": "gt06",
+      "port": 5023,
+      "recommended": false,
+      "category": "car",
+      "supportsObd": true
+    },
+    {
+      "device": "Concox GT07",
+      "protocol": "gt06",
+      "port": 5023,
+      "recommended": false,
+      "category": "car",
+      "supportsObd": true
+    },
+    {
+      "device": "GT09",
+      "protocol": "gt06",
+      "port": 5023,
+      "recommended": false,
+      "category": "car",
+      "supportsObd": true
+    },
+    {
+      "device": "Heacent 908",
+      "protocol": "gt06",
+      "port": 5023,
+      "recommended": false,
+      "category": "car",
+      "supportsObd": true
+    },
+    {
+      "device": "Concox GT03",
+      "protocol": "gt06",
+      "port": 5023,
+      "recommended": false,
+      "category": "car",
+      "supportsObd": true
+    },
+    {
+      "device": "Concox GT03A",
+      "protocol": "gt06",
+      "port": 5023,
+      "recommended": false,
+      "category": "car",
+      "supportsObd": true
+    },
+    {
+      "device": "Concox GT03B",
+      "protocol": "gt06",
+      "port": 5023,
+      "recommended": false,
+      "category": "car",
+      "supportsObd": true
+    }
+  ]
+}

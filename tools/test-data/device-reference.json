@@ -1,0 +1,2367 @@
+{
+  "description": "Comprehensive reference of supported devices",
+  "statistics": {
+    "total_devices": 1569,
+    "valid_devices": 1553,
+    "obd_capable": 247,
+    "recommended": 1,
+    "unique_protocols": 254
+  },
+  "protocols": {
+    "freematics": {
+      "count": 5,
+      "obd_support": true,
+      "sample_devices": [
+        "Freematics Traccar Edition",
+        "Freematics ONE+ Model A",
+        "Freematics ONE+ Model B",
+        "Freematics ONE+ Model H",
+        "Freematics ONE"
+      ]
+    },
+    "gps103": {
+      "count": 24,
+      "obd_support": true,
+      "sample_devices": [
+        "TK103-2B",
+        "TK104",
+        "GPS-103",
+        "GPS-103-A",
+        "TW-MD1101"
+      ]
+    },
+    "tk103": {
+      "count": 23,
+      "obd_support": false,
+      "sample_devices": [
+        "EC-546",
+        "TT0024",
+        "T1024",
+        "T1080",
+        "T2024"
+      ]
+    },
+    "gl100": {
+      "count": 1,
+      "obd_support": false,
+      "sample_devices": [
+        "GL100"
+      ]
+    },
+    "gl200": {
+      "count": 36,
+      "obd_support": false,
+      "sample_devices": [
+        "GL100M",
+        "GL200",
+        "GV300N",
+        "GT200",
+        "GT300"
+      ]
+    },
+    "t55": {
+      "count": 18,
+      "obd_support": false,
+      "sample_devices": [
+        "Gelix",
+        "Gelix-2",
+        "GPS-911(M)",
+        "AVL-900",
+        "AVL-900(R)"
+      ]
+    },
+    "xexun": {
+      "count": 10,
+      "obd_support": false,
+      "sample_devices": [
+        "TK101",
+        "TK102-2",
+        "TK103-2",
+        "XT009",
+        "XT011"
+      ]
+    },
+    "totem": {
+      "count": 15,
+      "obd_support": true,
+      "sample_devices": [
+        "TZ-AVL02",
+        "TZ-AVL03",
+        "TZ-AVL05",
+        "TZ-AVL08",
+        "TZ-AVL09"
+      ]
+    },
+    "enfora": {
+      "count": 4,
+      "obd_support": false,
+      "sample_devices": [
+        "Mini MT",
+        "Enfora GSM2338",
+        "Enfora GSM2448",
+        "Enfora MT4000"
+      ]
+    },
+    "meiligao": {
+      "count": 61,
+      "obd_support": false,
+      "sample_devices": [
+        "GT30i",
+        "GT60",
+        "VT300",
+        "VT310",
+        "VT400"
+      ]
+    },
+    "trv": {
+      "count": 6,
+      "obd_support": false,
+      "sample_devices": [
+        "PG88",
+        "S88",
+        "PG22",
+        "S22",
+        "VT206"
+      ]
+    },
+    "suntech": {
+      "count": 12,
+      "obd_support": false,
+      "sample_devices": [
+        "ST200",
+        "ST210",
+        "ST215",
+        "ST215I",
+        "ST215E"
+      ]
+    },
+    "progress": {
+      "count": 1,
+      "obd_support": false,
+      "sample_devices": [
+        "Progress 7s"
+      ]
+    },
+    "h02": {
+      "count": 80,
+      "obd_support": false,
+      "sample_devices": [
+        "H02",
+        "H-02A",
+        "H-02B",
+        "TX-2",
+        "H-06"
+      ]
+    },
+    "jt600": {
+      "count": 9,
+      "obd_support": false,
+      "sample_devices": [
+        "JT600",
+        "GP4000",
+        "GP5000",
+        "GP6000",
+        "JT700A"
+      ]
+    },
+    "huabao": {
+      "count": 30,
+      "obd_support": false,
+      "sample_devices": [
+        "HB-A5",
+        "G1C",
+        "JT705",
+        "ST-902W",
+        "CCTR 830-4G"
+      ]
+    },
+    "v680": {
+      "count": 10,
+      "obd_support": false,
+      "sample_devices": [
+        "V680",
+        "P10",
+        "HC207",
+        "VT810",
+        "KS168M"
+      ]
+    },
+    "pt502": {
+      "count": 15,
+      "obd_support": false,
+      "sample_devices": [
+        "Bofan PT03",
+        "Bofan PT30",
+        "Bofan PT80",
+        "Bofan PT300X",
+        "Bofan PT100"
+      ]
+    },
+    "tr20": {
+      "count": 1,
+      "obd_support": false,
+      "sample_devices": [
+        "TR-20"
+      ]
+    },
+    "navis": {
+      "count": 4,
+      "obd_support": false,
+      "sample_devices": [
+        "Signal S-2115",
+        "Signal S-2117",
+        "CH-4713",
+        "CH-5703"
+      ]
+    },
+    "meitrack": {
+      "count": 17,
+      "obd_support": false,
+      "sample_devices": [
+        "MT80",
+        "MT80i",
+        "MT88",
+        "MT90",
+        "KT90"
+      ]
+    },
+    "skypatrol": {
+      "count": 6,
+      "obd_support": false,
+      "sample_devices": [
+        "TT8750",
+        "TT8750+",
+        "TT9500",
+        "TT9200",
+        "TT8850"
+      ]
+    },
+    "gt02": {
+      "count": 2,
+      "obd_support": false,
+      "sample_devices": [
+        "GT02",
+        "TR02"
+      ]
+    },
+    "gt06": {
+      "count": 80,
+      "obd_support": true,
+      "sample_devices": [
+        "GT06N",
+        "Concox GT07",
+        "GT09",
+        "Heacent 908",
+        "Concox GT03"
+      ]
+    },
+    "megastek": {
+      "count": 20,
+      "obd_support": false,
+      "sample_devices": [
+        "MT-90",
+        "MT-100",
+        "GPT-69",
+        "GT-89",
+        "GT-99"
+      ]
+    },
+    "navigil": {
+      "count": 2,
+      "obd_support": false,
+      "sample_devices": [
+        "TD230",
+        "uTrace03e"
+      ]
+    },
+    "gpsgate": {
+      "count": 1,
+      "obd_support": false,
+      "sample_devices": [
+        "GpsGate"
+      ]
+    },
+    "teltonika": {
+      "count": 84,
+      "obd_support": true,
+      "sample_devices": [
+        "FMB965",
+        "FMC920",
+        "FMM920",
+        "FMC003",
+        "FMM003"
+      ]
+    },
+    "mta6": {
+      "count": 10,
+      "obd_support": false,
+      "sample_devices": [
+        "Gruz",
+        "Personal",
+        "ZoomBox",
+        "MPU-01",
+        "MPU-01 GLONASS"
+      ]
+    },
+    "tzone": {
+      "count": 1,
+      "obd_support": false,
+      "sample_devices": [
+        "TZ-AVL19"
+      ]
+    },
+    "tlt2h": {
+      "count": 31,
+      "obd_support": false,
+      "sample_devices": [
+        "TLT-2F",
+        "V520",
+        "TLT-2H",
+        "TLT-1C",
+        "V690"
+      ]
+    },
+    "taip": {
+      "count": 20,
+      "obd_support": false,
+      "sample_devices": [
+        "Syrus GPS",
+        "E-Track",
+        "Sierra",
+        "Lantrix",
+        "Syrus SY2210"
+      ]
+    },
+    "wondex": {
+      "count": 6,
+      "obd_support": false,
+      "sample_devices": [
+        "WondeX VT300",
+        "WondeX SPT-10",
+        "TK5000",
+        "Navixy M7",
+        "TK5000XL"
+      ]
+    },
+    "cellocator": {
+      "count": 4,
+      "obd_support": false,
+      "sample_devices": [
+        "CelloTrack 6M (IP65)",
+        "CelloTrack IP67",
+        "CelloTrack XT",
+        "Ekas Tracker"
+      ]
+    },
+    "galileo": {
+      "count": 14,
+      "obd_support": true,
+      "sample_devices": [
+        "GalileoSky 2.5",
+        "GalileoSky 4.0",
+        "GalileoSky 5.0",
+        "GalileoSky 5.1",
+        "GalileoSky 7.0"
+      ]
+    },
+    "ywt": {
+      "count": 2,
+      "obd_support": false,
+      "sample_devices": [
+        "V-MT001",
+        "V208"
+      ]
+    },
+    "intellitrac": {
+      "count": 4,
+      "obd_support": false,
+      "sample_devices": [
+        "IntelliTrac P1",
+        "IntelliTrac X1 Plus",
+        "IntelliTrac X8",
+        "Careu Ueco"
+      ]
+    },
+    "gpsmta": {
+      "count": 1,
+      "obd_support": false,
+      "sample_devices": [
+        "GPSMTA"
+      ]
+    },
+    "wialon": {
+      "count": 5,
+      "obd_support": false,
+      "sample_devices": [
+        "Wialon IPS",
+        "MasterKit",
+        "MasterKit BM8009",
+        "NeoTech TR_1000",
+        "Eskort TD-Online"
+      ]
+    },
+    "carscop": {
+      "count": 10,
+      "obd_support": false,
+      "sample_devices": [
+        "CCTR-620",
+        "CCTR-622",
+        "CCTR-700",
+        "CCTR-800",
+        "CCTR-801"
+      ]
+    },
+    "apel": {
+      "count": 3,
+      "obd_support": false,
+      "sample_devices": [
+        "T-104",
+        "T-104PRO",
+        "T-104 GLONASS"
+      ]
+    },
+    "manpower": {
+      "count": 5,
+      "obd_support": false,
+      "sample_devices": [
+        "MP2030A",
+        "MP2030B",
+        "MP2031A",
+        "MP2031B",
+        "MP2031C"
+      ]
+    },
+    "globalsat": {
+      "count": 9,
+      "obd_support": false,
+      "sample_devices": [
+        "TR-151",
+        "TR-151SP",
+        "TR-203",
+        "TR-206",
+        "TR-600"
+      ]
+    },
+    "atrack": {
+      "count": 29,
+      "obd_support": false,
+      "sample_devices": [
+        "ATrack AT1",
+        "ATrack AT1Pro",
+        "ATrack AT5i",
+        "ATrack AU5i",
+        "ATrack AX5"
+      ]
+    },
+    "pt3000": {
+      "count": 1,
+      "obd_support": false,
+      "sample_devices": [
+        "PT3000"
+      ]
+    },
+    "ruptela": {
+      "count": 6,
+      "obd_support": true,
+      "sample_devices": [
+        "FM-Pro3-R",
+        "FM-Tco3",
+        "FM-Pro3",
+        "FM-Eco3",
+        "Trailer Tracker"
+      ]
+    },
+    "topflytech": {
+      "count": 3,
+      "obd_support": false,
+      "sample_devices": [
+        "T8803",
+        "T8801",
+        "T8901"
+      ]
+    },
+    "laipac": {
+      "count": 8,
+      "obd_support": false,
+      "sample_devices": [
+        "StarFinder AIRE",
+        "StarFinder Lite",
+        "StarFinder Bus",
+        "S911 Lola",
+        "S911 Bracelet Locator"
+      ]
+    },
+    "aplicom": {
+      "count": 8,
+      "obd_support": false,
+      "sample_devices": [
+        "A9",
+        "A11",
+        "A1 Max",
+        "A1 Trax",
+        "A1 M2M"
+      ]
+    },
+    "gotop": {
+      "count": 12,
+      "obd_support": false,
+      "sample_devices": [
+        "Omega T600",
+        "TL007",
+        "TL201",
+        "TL206",
+        "TL218"
+      ]
+    },
+    "sanav": {
+      "count": 9,
+      "obd_support": false,
+      "sample_devices": [
+        "GC-101",
+        "CT-24",
+        "CT-58",
+        "CT-58A",
+        "GX-101"
+      ]
+    },
+    "gator": {
+      "count": 8,
+      "obd_support": false,
+      "sample_devices": [
+        "M528",
+        "M508",
+        "M518",
+        "M518S",
+        "M588N"
+      ]
+    },
+    "noran": {
+      "count": 14,
+      "obd_support": false,
+      "sample_devices": [
+        "NR002",
+        "NR006",
+        "NR008",
+        "NR016",
+        "NR024"
+      ]
+    },
+    "m2m": {
+      "count": 1,
+      "obd_support": false,
+      "sample_devices": [
+        "M2M-Mini"
+      ]
+    },
+    "osmand": {
+      "count": 7,
+      "obd_support": true,
+      "sample_devices": [
+        "OsmAnd",
+        "SendLocation",
+        "Locus Pro Android",
+        "Custodium",
+        "Traccar Client"
+      ]
+    },
+    "easytrack": {
+      "count": 5,
+      "obd_support": false,
+      "sample_devices": [
+        "ET-01",
+        "ET-06",
+        "ATRAX-S1",
+        "E3+",
+        "E3+4G"
+      ]
+    },
+    "gpsmarker": {
+      "count": 5,
+      "obd_support": false,
+      "sample_devices": [
+        "GPS Marker M130",
+        "GPS Marker M80",
+        "GPS Marker M70",
+        "GPS Marker M100",
+        "GPS Marker M60"
+      ]
+    },
+    "khd": {
+      "count": 21,
+      "obd_support": false,
+      "sample_devices": [
+        "KG100",
+        "KG200",
+        "KG300",
+        "KC200",
+        "T360-101A"
+      ]
+    },
+    "piligrim": {
+      "count": 5,
+      "obd_support": false,
+      "sample_devices": [
+        "Piligrim PL250",
+        "Piligrim 6000N",
+        "Piligrim Patrol",
+        "Piligrim Stealth",
+        "Piligrim Tracker-6000"
+      ]
+    },
+    "stl060": {
+      "count": 1,
+      "obd_support": false,
+      "sample_devices": [
+        "STL060"
+      ]
+    },
+    "cartrack": {
+      "count": 1,
+      "obd_support": false,
+      "sample_devices": [
+        "iTrackPro"
+      ]
+    },
+    "minifinder": {
+      "count": 14,
+      "obd_support": false,
+      "sample_devices": [
+        "MiniFinder Pico",
+        "MiniFinder Atto",
+        "EV-07",
+        "EV-07P",
+        "EV-07S"
+      ]
+    },
+    "haicom": {
+      "count": 7,
+      "obd_support": false,
+      "sample_devices": [
+        "HI-602X",
+        "HI-603X",
+        "HI-604X",
+        "HI-605X",
+        "HI-602"
+      ]
+    },
+    "eelink": {
+      "count": 32,
+      "obd_support": false,
+      "sample_devices": [
+        "TK115",
+        "TK116",
+        "GOT08",
+        "GOT10",
+        "GPT06"
+      ]
+    },
+    "box": {
+      "count": 4,
+      "obd_support": false,
+      "sample_devices": [
+        "BOXoptions+",
+        "BOXtracker",
+        "BOXsolo",
+        "BOX iSpot"
+      ]
+    },
+    "freedom": {
+      "count": 2,
+      "obd_support": false,
+      "sample_devices": [
+        "Freedom PT-9",
+        "Freedom PT-10"
+      ]
+    },
+    "telic": {
+      "count": 7,
+      "obd_support": false,
+      "sample_devices": [
+        "Telic SBC-AVL",
+        "Telic SBC3",
+        "SBC3",
+        "Picotrack",
+        "Picotrack IP69 K"
+      ]
+    },
+    "trackbox": {
+      "count": 1,
+      "obd_support": false,
+      "sample_devices": [
+        "Trackbox"
+      ]
+    },
+    "visiontek": {
+      "count": 3,
+      "obd_support": false,
+      "sample_devices": [
+        "84 VT",
+        "86 VT",
+        "VT87"
+      ]
+    },
+    "orion": {
+      "count": 4,
+      "obd_support": false,
+      "sample_devices": [
+        "Orion ET-100",
+        "Orion OBDtrac",
+        "BD-2012",
+        "BD-3112"
+      ]
+    },
+    "riti": {
+      "count": 3,
+      "obd_support": false,
+      "sample_devices": [
+        "SLS-00886",
+        "SLS-012SF",
+        "TYN_886"
+      ]
+    },
+    "ulbotech": {
+      "count": 12,
+      "obd_support": true,
+      "sample_devices": [
+        "T370",
+        "T360",
+        "T303",
+        "T301",
+        "T376"
+      ]
+    },
+    "tramigo": {
+      "count": 1,
+      "obd_support": false,
+      "sample_devices": [
+        "T23"
+      ]
+    },
+    "tr900": {
+      "count": 3,
+      "obd_support": false,
+      "sample_devices": [
+        "TR-900",
+        "NEO1",
+        "NEO2"
+      ]
+    },
+    "ardi01": {
+      "count": 1,
+      "obd_support": false,
+      "sample_devices": [
+        "Ardi 01"
+      ]
+    },
+    "xt013": {
+      "count": 1,
+      "obd_support": false,
+      "sample_devices": [
+        "XT013"
+      ]
+    },
+    "autofon": {
+      "count": 7,
+      "obd_support": false,
+      "sample_devices": [
+        "AutoFon D",
+        "AutoFon SE",
+        "AutoFon SE+",
+        "StarLine M10",
+        "StarLine M11"
+      ]
+    },
+    "gosafe": {
+      "count": 15,
+      "obd_support": false,
+      "sample_devices": [
+        "GoSafe G1S",
+        "GoSafe G2P",
+        "GoSafe G3A",
+        "GoSafe G3C",
+        "GoSafe G3S"
+      ]
+    },
+    "bce": {
+      "count": 15,
+      "obd_support": false,
+      "sample_devices": [
+        "BCE FM Light",
+        "BCE FM Light+",
+        "BCE FM Blue",
+        "BCE FM Blue+",
+        "FM 500Q"
+      ]
+    },
+    "xirgo": {
+      "count": 22,
+      "obd_support": false,
+      "sample_devices": [
+        "XT-2000G",
+        "XT-2060G",
+        "XT-2050C",
+        "XT-2150",
+        "XT-2150G"
+      ]
+    },
+    "calamp": {
+      "count": 25,
+      "obd_support": false,
+      "sample_devices": [
+        "ATU-620",
+        "LMU-1100 Series",
+        "TTU-700 Series",
+        "TTU-1200 Series",
+        "TTU-2820 Series"
+      ]
+    },
+    "mtx": {
+      "count": 1,
+      "obd_support": false,
+      "sample_devices": [
+        "MTX-Tunnel GPS"
+      ]
+    },
+    "tytan": {
+      "count": 3,
+      "obd_support": false,
+      "sample_devices": [
+        "Tytan SAT DS520",
+        "Tytan SAT DS530",
+        "Tytan SAT DS540"
+      ]
+    },
+    "avl301": {
+      "count": 1,
+      "obd_support": false,
+      "sample_devices": [
+        "TZ-AVL301"
+      ]
+    },
+    "castel": {
+      "count": 17,
+      "obd_support": false,
+      "sample_devices": [
+        "IDD-213G",
+        "IDD-212GL",
+        "IDD-212B",
+        "IDD-213T",
+        "IDD-213N/E"
+      ]
+    },
+    "mxt": {
+      "count": 14,
+      "obd_support": false,
+      "sample_devices": [
+        "MXT-142",
+        "MTC-700",
+        "MTC-780",
+        "MXT-140",
+        "MXT-141"
+      ]
+    },
+    "cityeasy": {
+      "count": 11,
+      "obd_support": false,
+      "sample_devices": [
+        "Cityeasy 520",
+        "Cityeasy 009",
+        "Cityeasy 006",
+        "Cityeasy 007",
+        "Cityeasy 202"
+      ]
+    },
+    "aquila": {
+      "count": 8,
+      "obd_support": false,
+      "sample_devices": [
+        "S101+",
+        "S101",
+        "U101V1+",
+        "U101",
+        "U101v1"
+      ]
+    },
+    "flextrack": {
+      "count": 3,
+      "obd_support": false,
+      "sample_devices": [
+        "Lommy Pro",
+        "Lommy Personal",
+        "Lommy Eye"
+      ]
+    },
+    "blackkite": {
+      "count": 2,
+      "obd_support": false,
+      "sample_devices": [
+        "BlackKite Fleet",
+        "BK-FLT-P1"
+      ]
+    },
+    "adm": {
+      "count": 9,
+      "obd_support": false,
+      "sample_devices": [
+        "ADM100",
+        "ADM101",
+        "ADM300",
+        "ADM700",
+        "ADM700 3G"
+      ]
+    },
+    "watch": {
+      "count": 10,
+      "obd_support": false,
+      "sample_devices": [
+        "JM09",
+        "TK STAR STICK",
+        "A9 GPS tracker",
+        "T8S",
+        "Astro 120"
+      ]
+    },
+    "t800x": {
+      "count": 13,
+      "obd_support": false,
+      "sample_devices": [
+        "T8808",
+        "T8803 PRO",
+        "T8806",
+        "T8805",
+        "T8603"
+      ]
+    },
+    "upro": {
+      "count": 19,
+      "obd_support": false,
+      "sample_devices": [
+        "U-Pro mini",
+        "Kingwo MT01",
+        "Kingwo MT02S",
+        "Kingwo MT08",
+        "Kingwo MT03"
+      ]
+    },
+    "auro": {
+      "count": 1,
+      "obd_support": false,
+      "sample_devices": [
+        "AURO Comfort 1060"
+      ]
+    },
+    "disha": {
+      "count": 4,
+      "obd_support": false,
+      "sample_devices": [
+        "Disha 9310",
+        "Disha 9320",
+        "Disha 9330",
+        "TD 300"
+      ]
+    },
+    "thinkrace": {
+      "count": 1,
+      "obd_support": false,
+      "sample_devices": [
+        "VT100"
+      ]
+    },
+    "pathaway": {
+      "count": 1,
+      "obd_support": false,
+      "sample_devices": [
+        "PathAway"
+      ]
+    },
+    "arnavi": {
+      "count": 1,
+      "obd_support": false,
+      "sample_devices": [
+        "ARNAVI"
+      ]
+    },
+    "nvs": {
+      "count": 2,
+      "obd_support": false,
+      "sample_devices": [
+        "\u0421\u041d-5707",
+        "NVS-RTK-M"
+      ]
+    },
+    "kenji": {
+      "count": 1,
+      "obd_support": false,
+      "sample_devices": [
+        "Kenji KJ-8501"
+      ]
+    },
+    "astra": {
+      "count": 4,
+      "obd_support": false,
+      "sample_devices": [
+        "AT-200",
+        "AT-210",
+        "AT-240",
+        "Astra Telematics AT Series"
+      ]
+    },
+    "homtecs": {
+      "count": 1,
+      "obd_support": false,
+      "sample_devices": [
+        "Homtecs H20"
+      ]
+    },
+    "fox": {
+      "count": 3,
+      "obd_support": false,
+      "sample_devices": [
+        "Fox Easy AVL",
+        "Fox Lite AVL",
+        "Fox Advanced AVL"
+      ]
+    },
+    "gnx": {
+      "count": 2,
+      "obd_support": false,
+      "sample_devices": [
+        "GNX-2",
+        "GNX-3"
+      ]
+    },
+    "arknav": {
+      "count": 11,
+      "obd_support": false,
+      "sample_devices": [
+        "RX-9",
+        "RX-8W",
+        "RV-8",
+        "R-9PRO",
+        "R-9W"
+      ]
+    },
+    "supermate": {
+      "count": 2,
+      "obd_support": false,
+      "sample_devices": [
+        "Supermate D-series",
+        "D11"
+      ]
+    },
+    "appello": {
+      "count": 1,
+      "obd_support": false,
+      "sample_devices": [
+        "Appello 4P"
+      ]
+    },
+    "idpl": {
+      "count": 1,
+      "obd_support": false,
+      "sample_devices": [
+        "IDPL"
+      ]
+    },
+    "huasheng": {
+      "count": 9,
+      "obd_support": false,
+      "sample_devices": [
+        "HS-500P",
+        "HS-300V",
+        "HS-400",
+        "HS-1200",
+        "HS-3000G"
+      ]
+    },
+    "granit": {
+      "count": 7,
+      "obd_support": false,
+      "sample_devices": [
+        "C-100",
+        "G-100",
+        "L-100",
+        "O-300",
+        "WP-30C"
+      ]
+    },
+    "carcell": {
+      "count": 5,
+      "obd_support": false,
+      "sample_devices": [
+        "Carcell CR1000",
+        "Carcell CR2000",
+        "Carcell CR3000",
+        "Carcell CR4000",
+        "Carcell CR250"
+      ]
+    },
+    "raveon": {
+      "count": 1,
+      "obd_support": false,
+      "sample_devices": [
+        "RV-M7"
+      ]
+    },
+    "cradlepoint": {
+      "count": 1,
+      "obd_support": false,
+      "sample_devices": [
+        "CradlePoint"
+      ]
+    },
+    "arknavx8": {
+      "count": 3,
+      "obd_support": false,
+      "sample_devices": [
+        "Arknav CT-X8",
+        "Arknav GX",
+        "Arknav RX"
+      ]
+    },
+    "autograde": {
+      "count": 1,
+      "obd_support": false,
+      "sample_devices": [
+        "AutoGrade"
+      ]
+    },
+    "oigo": {
+      "count": 3,
+      "obd_support": false,
+      "sample_devices": [
+        "AR-2GM",
+        "AR-3HU",
+        "AR-2CX"
+      ]
+    },
+    "jpkorjar": {
+      "count": 1,
+      "obd_support": false,
+      "sample_devices": [
+        "JP-KORJAR"
+      ]
+    },
+    "cguard": {
+      "count": 5,
+      "obd_support": false,
+      "sample_devices": [
+        "cGuard Personal",
+        "cGuard Atom",
+        "cGuard OBD",
+        "cGuard Litom",
+        "cGuard Beacon"
+      ]
+    },
+    "fifotrack": {
+      "count": 13,
+      "obd_support": false,
+      "sample_devices": [
+        "Fifotrack A100",
+        "Fifotrack A200",
+        "Fifotrack A300",
+        "Fifotrack A500",
+        "Fifotrack A600"
+      ]
+    },
+    "extremtrac": {
+      "count": 1,
+      "obd_support": false,
+      "sample_devices": [
+        "ET800E"
+      ]
+    },
+    "trakmate": {
+      "count": 1,
+      "obd_support": false,
+      "sample_devices": [
+        "TrakMate"
+      ]
+    },
+    "at2000": {
+      "count": 1,
+      "obd_support": false,
+      "sample_devices": [
+        "AT2000"
+      ]
+    },
+    "maestro": {
+      "count": 1,
+      "obd_support": false,
+      "sample_devices": [
+        "Maestro MT-01"
+      ]
+    },
+    "ais": {
+      "count": 1,
+      "obd_support": false,
+      "sample_devices": [
+        "AIVDM/AIVDO AIS"
+      ]
+    },
+    "gt30": {
+      "count": 1,
+      "obd_support": false,
+      "sample_devices": [
+        "GT-30"
+      ]
+    },
+    "tmg": {
+      "count": 2,
+      "obd_support": false,
+      "sample_devices": [
+        "TrackMiGaddi",
+        "TMG188"
+      ]
+    },
+    "pretrace": {
+      "count": 5,
+      "obd_support": false,
+      "sample_devices": [
+        "TC85D",
+        "TC56",
+        "TC55",
+        "TC80",
+        "TC85"
+      ]
+    },
+    "pricol": {
+      "count": 1,
+      "obd_support": false,
+      "sample_devices": [
+        "Pricol"
+      ]
+    },
+    "siwi": {
+      "count": 1,
+      "obd_support": false,
+      "sample_devices": [
+        "SIWI"
+      ]
+    },
+    "starlink": {
+      "count": 12,
+      "obd_support": false,
+      "sample_devices": [
+        "StarLink Asset",
+        "StarLink Trailer",
+        "Starlink TrackerBT",
+        "StarLink Tracker",
+        "StarLink TrackerSF"
+      ]
+    },
+    "dmt": {
+      "count": 6,
+      "obd_support": false,
+      "sample_devices": [
+        "G100",
+        "G60",
+        "G52S",
+        "DART",
+        "OYSTER"
+      ]
+    },
+    "xt2400": {
+      "count": 2,
+      "obd_support": false,
+      "sample_devices": [
+        "Xirgo XT2400 Series",
+        "Xirgo XT6300 Series"
+      ]
+    },
+    "dmthttp": {
+      "count": 1,
+      "obd_support": false,
+      "sample_devices": [
+        "REMORA"
+      ]
+    },
+    "alematics": {
+      "count": 10,
+      "obd_support": false,
+      "sample_devices": [
+        "AE1",
+        "AE1-W",
+        "AM1-S",
+        "AM1-W",
+        "AM1-S(V)"
+      ]
+    },
+    "gps056": {
+      "count": 1,
+      "obd_support": false,
+      "sample_devices": [
+        "GPS056"
+      ]
+    },
+    "flexcomm": {
+      "count": 2,
+      "obd_support": false,
+      "sample_devices": [
+        "Flexcomm Series",
+        "FT-3150"
+      ]
+    },
+    "vt200": {
+      "count": 3,
+      "obd_support": false,
+      "sample_devices": [
+        "VT200",
+        "VT400",
+        "Cantrack T80 OBD"
+      ]
+    },
+    "owntracks": {
+      "count": 1,
+      "obd_support": false,
+      "sample_devices": [
+        "OwnTracks"
+      ]
+    },
+    "vtfms": {
+      "count": 1,
+      "obd_support": false,
+      "sample_devices": [
+        "VTFMS"
+      ]
+    },
+    "tlv": {
+      "count": 1,
+      "obd_support": false,
+      "sample_devices": [
+        "TLV"
+      ]
+    },
+    "esky": {
+      "count": 2,
+      "obd_support": false,
+      "sample_devices": [
+        "ES610",
+        "MT821"
+      ]
+    },
+    "genx": {
+      "count": 6,
+      "obd_support": false,
+      "sample_devices": [
+        "GNX-20",
+        "GNX-6",
+        "GNX-5P",
+        "GNX-3",
+        "GNX-10L"
+      ]
+    },
+    "flespi": {
+      "count": 1,
+      "obd_support": false,
+      "sample_devices": [
+        "Flespi"
+      ]
+    },
+    "dway": {
+      "count": 1,
+      "obd_support": false,
+      "sample_devices": [
+        "D-WAY"
+      ]
+    },
+    "recoda": {
+      "count": 1,
+      "obd_support": false,
+      "sample_devices": [
+        "Recoda M610"
+      ]
+    },
+    "oko": {
+      "count": 3,
+      "obd_support": false,
+      "sample_devices": [
+        "OKO-S2",
+        "OKO-E",
+        "OKO-NAVI"
+      ]
+    },
+    "ivt401": {
+      "count": 6,
+      "obd_support": false,
+      "sample_devices": [
+        "Intellinet IVT 401",
+        "TL500",
+        "TL1000",
+        "AUTOCOP",
+        "TL3000"
+      ]
+    },
+    "sigfox": {
+      "count": 1,
+      "obd_support": false,
+      "sample_devices": [
+        "Oyster Sigfox"
+      ]
+    },
+    "t57": {
+      "count": 1,
+      "obd_support": false,
+      "sample_devices": [
+        "T57"
+      ]
+    },
+    "spot": {
+      "count": 2,
+      "obd_support": false,
+      "sample_devices": [
+        "SPOT",
+        "SPOT GEN3"
+      ]
+    },
+    "m2c": {
+      "count": 1,
+      "obd_support": false,
+      "sample_devices": [
+        "M2C2020"
+      ]
+    },
+    "globekeeper": {
+      "count": 1,
+      "obd_support": false,
+      "sample_devices": [
+        "GlobeKeeper"
+      ]
+    },
+    "opengts": {
+      "count": 2,
+      "obd_support": false,
+      "sample_devices": [
+        "OpenGTS",
+        "GPSLogger"
+      ]
+    },
+    "cautela": {
+      "count": 2,
+      "obd_support": false,
+      "sample_devices": [
+        "Cautela",
+        "Motorola HF"
+      ]
+    },
+    "continental": {
+      "count": 1,
+      "obd_support": false,
+      "sample_devices": [
+        "Continental Vehicle Tracker"
+      ]
+    },
+    "egts": {
+      "count": 1,
+      "obd_support": false,
+      "sample_devices": [
+        "EGTS (Era-Glonass)"
+      ]
+    },
+    "robotrack": {
+      "count": 3,
+      "obd_support": false,
+      "sample_devices": [
+        "ROBOT-UPS",
+        "ROBOT-GPS",
+        "ROBOTRACK"
+      ]
+    },
+    "pt60": {
+      "count": 1,
+      "obd_support": false,
+      "sample_devices": [
+        "PT60"
+      ]
+    },
+    "telemax": {
+      "count": 1,
+      "obd_support": false,
+      "sample_devices": [
+        "Telemax"
+      ]
+    },
+    "sabertek": {
+      "count": 1,
+      "obd_support": false,
+      "sample_devices": [
+        "Micro Genie"
+      ]
+    },
+    "retranslator": {
+      "count": 1,
+      "obd_support": false,
+      "sample_devices": [
+        "Wialon Retranslator"
+      ]
+    },
+    "svias": {
+      "count": 1,
+      "obd_support": false,
+      "sample_devices": [
+        "Vias700"
+      ]
+    },
+    "eseal": {
+      "count": 1,
+      "obd_support": false,
+      "sample_devices": [
+        "eSeal"
+      ]
+    },
+    "avema": {
+      "count": 6,
+      "obd_support": false,
+      "sample_devices": [
+        "AT35",
+        "AT35 3G",
+        "AT35 LTE",
+        "AT35 4G/LTE MiFi",
+        "MT99"
+      ]
+    },
+    "autotrack": {
+      "count": 2,
+      "obd_support": false,
+      "sample_devices": [
+        "AutoTrack XL",
+        "AutoTrack \u0435Lite"
+      ]
+    },
+    "tek": {
+      "count": 2,
+      "obd_support": false,
+      "sample_devices": [
+        "TEK-586",
+        "TEK-733"
+      ]
+    },
+    "wristband": {
+      "count": 1,
+      "obd_support": false,
+      "sample_devices": [
+        "Wrist Band"
+      ]
+    },
+    "milesmate": {
+      "count": 2,
+      "obd_support": false,
+      "sample_devices": [
+        "GB101",
+        "MM101A"
+      ]
+    },
+    "anytrek": {
+      "count": 1,
+      "obd_support": false,
+      "sample_devices": [
+        "VT1611"
+      ]
+    },
+    "smartsole": {
+      "count": 1,
+      "obd_support": false,
+      "sample_devices": [
+        "SmartSole"
+      ]
+    },
+    "its": {
+      "count": 2,
+      "obd_support": false,
+      "sample_devices": [
+        "ITS",
+        "AIS140"
+      ]
+    },
+    "xrb28": {
+      "count": 1,
+      "obd_support": false,
+      "sample_devices": [
+        "XRB 28"
+      ]
+    },
+    "c2stek": {
+      "count": 2,
+      "obd_support": false,
+      "sample_devices": [
+        "C2STEK",
+        "MT-20"
+      ]
+    },
+    "nyitech": {
+      "count": 2,
+      "obd_support": false,
+      "sample_devices": [
+        "NT-183W",
+        "NT-183G"
+      ]
+    },
+    "neos": {
+      "count": 6,
+      "obd_support": false,
+      "sample_devices": [
+        "GEO5",
+        "NEO5",
+        "NEO7",
+        "GEO1",
+        "NEO1"
+      ]
+    },
+    "satsol": {
+      "count": 2,
+      "obd_support": false,
+      "sample_devices": [
+        "SAT-LITE 4",
+        "SAT-LITE 3"
+      ]
+    },
+    "globalstar": {
+      "count": 1,
+      "obd_support": false,
+      "sample_devices": [
+        "Globalstar"
+      ]
+    },
+    "sanul": {
+      "count": 1,
+      "obd_support": false,
+      "sample_devices": [
+        "SANUL"
+      ]
+    },
+    "minifinder2": {
+      "count": 4,
+      "obd_support": false,
+      "sample_devices": [
+        "MiniFinder Nano",
+        "MiniFinder Atto Pro",
+        "MiniFinder Rex",
+        "PEBBELL"
+      ]
+    },
+    "radar": {
+      "count": 2,
+      "obd_support": false,
+      "sample_devices": [
+        "Radar Duo",
+        "Radar Trio"
+      ]
+    },
+    "techtlt": {
+      "count": 3,
+      "obd_support": false,
+      "sample_devices": [
+        "GPSRX12",
+        "GPSRX14",
+        "GPSRX16"
+      ]
+    },
+    "starcom": {
+      "count": 4,
+      "obd_support": false,
+      "sample_devices": [
+        "Helios",
+        "Helios TT",
+        "Helios Advanced",
+        "Helios Hybrid"
+      ]
+    },
+    "mictrack": {
+      "count": 4,
+      "obd_support": false,
+      "sample_devices": [
+        "MT550",
+        "MT825",
+        "ES821",
+        "ES825"
+      ]
+    },
+    "plugin": {
+      "count": 1,
+      "obd_support": false,
+      "sample_devices": [
+        "Plugin"
+      ]
+    },
+    "leafspy": {
+      "count": 1,
+      "obd_support": false,
+      "sample_devices": [
+        "Leaf Spy Pro"
+      ]
+    },
+    "naviset": {
+      "count": 1,
+      "obd_support": false,
+      "sample_devices": [
+        "Naviset GT-20"
+      ]
+    },
+    "racedynamics": {
+      "count": 1,
+      "obd_support": false,
+      "sample_devices": [
+        "Race Dynamics"
+      ]
+    },
+    "rst": {
+      "count": 8,
+      "obd_support": false,
+      "sample_devices": [
+        "RST MINI LOW COST",
+        "RST MINI",
+        "RST LOW COST",
+        "RST VERSAO TELEMETRIA",
+        "RST MINI 4G"
+      ]
+    },
+    "pt215": {
+      "count": 1,
+      "obd_support": false,
+      "sample_devices": [
+        "PT215"
+      ]
+    },
+    "pacifictrack": {
+      "count": 1,
+      "obd_support": false,
+      "sample_devices": [
+        "PT40"
+      ]
+    },
+    "topin": {
+      "count": 1,
+      "obd_support": false,
+      "sample_devices": [
+        "ZhongXun Topin"
+      ]
+    },
+    "outsafe": {
+      "count": 1,
+      "obd_support": false,
+      "sample_devices": [
+        "Sigaba OutSafe"
+      ]
+    },
+    "solarpowered": {
+      "count": 1,
+      "obd_support": false,
+      "sample_devices": [
+        "Solar Powered"
+      ]
+    },
+    "motor": {
+      "count": 1,
+      "obd_support": false,
+      "sample_devices": [
+        "Motor"
+      ]
+    },
+    "omnicomm": {
+      "count": 6,
+      "obd_support": false,
+      "sample_devices": [
+        "Profi",
+        "Optim",
+        "Light",
+        "Profi 2.0",
+        "Optim 2.0"
+      ]
+    },
+    "s168": {
+      "count": 1,
+      "obd_support": false,
+      "sample_devices": [
+        "S168"
+      ]
+    },
+    "vnet": {
+      "count": 1,
+      "obd_support": false,
+      "sample_devices": [
+        "VNET"
+      ]
+    },
+    "blue": {
+      "count": 2,
+      "obd_support": false,
+      "sample_devices": [
+        "ET-700",
+        "ET-700C"
+      ]
+    },
+    "pst": {
+      "count": 1,
+      "obd_support": false,
+      "sample_devices": [
+        "PST"
+      ]
+    },
+    "dingtek": {
+      "count": 2,
+      "obd_support": false,
+      "sample_devices": [
+        "DF550",
+        "DF702"
+      ]
+    },
+    "wli": {
+      "count": 7,
+      "obd_support": false,
+      "sample_devices": [
+        "Piccolo STX\u200b\u200b",
+        "Piccolo Plus",
+        "Piccolo Hybrid+\u200b\u200b\u200b",
+        "Piccolo ATX2S\u200b\u200b",
+        "Piccolo ATX Asset\u200b\u200b"
+      ]
+    },
+    "niot": {
+      "count": 1,
+      "obd_support": false,
+      "sample_devices": [
+        "NIOT"
+      ]
+    },
+    "portman": {
+      "count": 2,
+      "obd_support": false,
+      "sample_devices": [
+        "Portman",
+        "GT3105MG-PT"
+      ]
+    },
+    "moovbox": {
+      "count": 2,
+      "obd_support": false,
+      "sample_devices": [
+        "Icomera MoovBox",
+        "M320"
+      ]
+    },
+    "futureway": {
+      "count": 2,
+      "obd_support": false,
+      "sample_devices": [
+        "Futureway",
+        "Smart Crutches"
+      ]
+    },
+    "polte": {
+      "count": 1,
+      "obd_support": false,
+      "sample_devices": [
+        "POLTE"
+      ]
+    },
+    "net": {
+      "count": 1,
+      "obd_support": false,
+      "sample_devices": [
+        "NET"
+      ]
+    },
+    "mobilogix": {
+      "count": 5,
+      "obd_support": false,
+      "sample_devices": [
+        "MT2000",
+        "MT2000S",
+        "MT4x00",
+        "BAT-M1",
+        "BAT-X"
+      ]
+    },
+    "swiftech": {
+      "count": 1,
+      "obd_support": false,
+      "sample_devices": [
+        "SWIFTECH"
+      ]
+    },
+    "iotm": {
+      "count": 5,
+      "obd_support": false,
+      "sample_devices": [
+        "FMS500",
+        "XG3700",
+        "XG3780",
+        "FMS500 StScan",
+        "FMS500 Tacho"
+      ]
+    },
+    "dolphin": {
+      "count": 1,
+      "obd_support": false,
+      "sample_devices": [
+        "Dolphin DO107"
+      ]
+    },
+    "ennfu": {
+      "count": 1,
+      "obd_support": false,
+      "sample_devices": [
+        "Ebike Tracker"
+      ]
+    },
+    "navtelecom": {
+      "count": 27,
+      "obd_support": false,
+      "sample_devices": [
+        "Start S-2010",
+        "Start S-2011",
+        "Start S-2012",
+        "Start S-2013",
+        "Smart S-2410"
+      ]
+    },
+    "startek": {
+      "count": 8,
+      "obd_support": false,
+      "sample_devices": [
+        "iStartek VT100",
+        "iStartek VT100-L",
+        "iStartek VT200",
+        "iStartek VT200 L",
+        "iStartek VT202"
+      ]
+    },
+    "gs100": {
+      "count": 1,
+      "obd_support": false,
+      "sample_devices": [
+        "Galeb GS100"
+      ]
+    },
+    "mavlink2": {
+      "count": 1,
+      "obd_support": false,
+      "sample_devices": [
+        "MAVLink compatible drones"
+      ]
+    },
+    "uux": {
+      "count": 1,
+      "obd_support": false,
+      "sample_devices": [
+        "UUx device"
+      ]
+    },
+    "r12w": {
+      "count": 1,
+      "obd_support": false,
+      "sample_devices": [
+        "R12W"
+      ]
+    },
+    "flexiblereport": {
+      "count": 1,
+      "obd_support": false,
+      "sample_devices": [
+        "GP-900M"
+      ]
+    },
+    "thinkpower": {
+      "count": 6,
+      "obd_support": false,
+      "sample_devices": [
+        "TL904C",
+        "TL904B",
+        "TL904A",
+        "TW560",
+        "TL903"
+      ]
+    },
+    "stb": {
+      "count": 2,
+      "obd_support": false,
+      "sample_devices": [
+        "STB IND 01",
+        "STB IND 02"
+      ]
+    },
+    "b2316": {
+      "count": 1,
+      "obd_support": false,
+      "sample_devices": [
+        "Mictrack B2316"
+      ]
+    },
+    "hoopo": {
+      "count": 1,
+      "obd_support": false,
+      "sample_devices": [
+        "Hoopo Platform API"
+      ]
+    },
+    "dualcam": {
+      "count": 1,
+      "obd_support": false,
+      "sample_devices": [
+        "Teltonika DualCam"
+      ]
+    },
+    "xexun2": {
+      "count": 10,
+      "obd_support": false,
+      "sample_devices": [
+        "TT18 4G",
+        "X01",
+        "X02",
+        "X03",
+        "X04"
+      ]
+    },
+    "techtocruz": {
+      "count": 1,
+      "obd_support": false,
+      "sample_devices": [
+        "Techto Cruz"
+      ]
+    },
+    "flexapi": {
+      "count": 1,
+      "obd_support": false,
+      "sample_devices": [
+        "VT310"
+      ]
+    },
+    "dsf22": {
+      "count": 3,
+      "obd_support": false,
+      "sample_devices": [
+        "DSF10",
+        "DSF21",
+        "DSF22"
+      ]
+    },
+    "jido": {
+      "count": 1,
+      "obd_support": false,
+      "sample_devices": [
+        "T63"
+      ]
+    },
+    "armoli": {
+      "count": 4,
+      "obd_support": false,
+      "sample_devices": [
+        "S300",
+        "L300",
+        "L300wi",
+        "P300"
+      ]
+    },
+    "teratrack": {
+      "count": 1,
+      "obd_support": false,
+      "sample_devices": [
+        "SKY IoT"
+      ]
+    },
+    "envotech": {
+      "count": 17,
+      "obd_support": false,
+      "sample_devices": [
+        "T63",
+        "RadioSecure SLM",
+        "RadioSecure SLM-m",
+        "RadioSecure SLM-i",
+        "RadioSecure SLM-x"
+      ]
+    },
+    "bstpl": {
+      "count": 4,
+      "obd_support": false,
+      "sample_devices": [
+        "BSTPL-17IS",
+        "BSTPL-17A",
+        "BSTPL-17",
+        "BSTPL-15"
+      ]
+    },
+    "thuraya": {
+      "count": 3,
+      "obd_support": false,
+      "sample_devices": [
+        "Thuraya T2M-Dual",
+        "Thuraya T2M-SAT",
+        "Thuraya T2M"
+      ]
+    },
+    "ndtpv6": {
+      "count": 1,
+      "obd_support": false,
+      "sample_devices": [
+        "Granit-Navigator"
+      ]
+    },
+    "g1rus": {
+      "count": 1,
+      "obd_support": false,
+      "sample_devices": [
+        "GoSafe G1RUS"
+      ]
+    },
+    "rftrack": {
+      "count": 1,
+      "obd_support": false,
+      "sample_devices": [
+        "RFTRACK"
+      ]
+    },
+    "vlt": {
+      "count": 1,
+      "obd_support": false,
+      "sample_devices": [
+        "VLT"
+      ]
+    },
+    "transync": {
+      "count": 1,
+      "obd_support": false,
+      "sample_devices": [
+        "TranSync AIS 140"
+      ]
+    },
+    "t622iridium": {
+      "count": 3,
+      "obd_support": false,
+      "sample_devices": [
+        "T622G-F9",
+        "ST4000",
+        "CR4000"
+      ]
+    },
+    "pui": {
+      "count": 1,
+      "obd_support": false,
+      "sample_devices": [
+        "Positioning Universal"
+      ]
+    },
+    "nto": {
+      "count": 1,
+      "obd_support": false,
+      "sample_devices": [
+        "NTO tracker"
+      ]
+    },
+    "ramac": {
+      "count": 1,
+      "obd_support": false,
+      "sample_devices": [
+        "RAMAC"
+      ]
+    },
+    "positrex": {
+      "count": 6,
+      "obd_support": false,
+      "sample_devices": [
+        "VT 110 210",
+        "VT 110 211",
+        "VT 110 010",
+        "VT 112 210",
+        "VT 120 210"
+      ]
+    },
+    "dragino": {
+      "count": 4,
+      "obd_support": false,
+      "sample_devices": [
+        "TrackerD-LS",
+        "TrackerD",
+        "LBT1",
+        "LGT92"
+      ]
+    },
+    "fleetguide": {
+      "count": 1,
+      "obd_support": false,
+      "sample_devices": [
+        "FleetGuide"
+      ]
+    },
+    "valtrack": {
+      "count": 1,
+      "obd_support": false,
+      "sample_devices": [
+        "VALTRACK-V4"
+      ]
+    },
+    "snapper": {
+      "count": 1,
+      "obd_support": false,
+      "sample_devices": [
+        "Snapper GN8"
+      ]
+    },
+    "gl601": {
+      "count": 2,
+      "obd_support": false,
+      "sample_devices": [
+        "GL601",
+        "GL601CEU"
+      ]
+    },
+    "hyn600": {
+      "count": 1,
+      "obd_support": false,
+      "sample_devices": [
+        "HYN600"
+      ]
+    },
+    "jmak": {
+      "count": 2,
+      "obd_support": false,
+      "sample_devices": [
+        "JMAK JR11",
+        "JMAK JR12"
+      ]
+    },
+    "bws": {
+      "count": 1,
+      "obd_support": false,
+      "sample_devices": [
+        "BWS NB2"
+      ]
+    },
+    "ttnhttp": {
+      "count": 1,
+      "obd_support": false,
+      "sample_devices": [
+        "The Things Network (TTN)"
+      ]
+    }
+  },
+  "sample_recommended": [
+    {
+      "device": "Freematics Traccar Edition",
+      "protocol": "freematics",
+      "port": 5170,
+      "category": "car"
+    }
+  ],
+  "sample_obd_devices": [
+    {
+      "device": "Freematics Traccar Edition",
+      "protocol": "freematics",
+      "port": 5170,
+      "category": "car"
+    },
+    {
+      "device": "Freematics ONE+ Model A",
+      "protocol": "freematics",
+      "port": 5170,
+      "category": "car"
+    },
+    {
+      "device": "Freematics ONE+ Model B",
+      "protocol": "freematics",
+      "port": 5170,
+      "category": "car"
+    },
+    {
+      "device": "Freematics ONE+ Model H",
+      "protocol": "freematics",
+      "port": 5170,
+      "category": "car"
+    },
+    {
+      "device": "TK103-2B",
+      "protocol": "gps103",
+      "port": 5001,
+      "category": "car"
+    },
+    {
+      "device": "TK104",
+      "protocol": "gps103",
+      "port": 5001,
+      "category": "car"
+    },
+    {
+      "device": "GPS-103",
+      "protocol": "gps103",
+      "port": 5001,
+      "category": "car"
+    },
+    {
+      "device": "GPS-103-A",
+      "protocol": "gps103",
+      "port": 5001,
+      "category": "car"
+    },
+    {
+      "device": "TW-MD1101",
+      "protocol": "gps103",
+      "port": 5001,
+      "category": "car"
+    },
+    {
+      "device": "GPS102",
+      "protocol": "gps103",
+      "port": 5001,
+      "category": "car"
+    },
+    {
+      "device": "GPS102B",
+      "protocol": "gps103",
+      "port": 5001,
+      "category": "car"
+    },
+    {
+      "device": "GPS104",
+      "protocol": "gps103",
+      "port": 5001,
+      "category": "car"
+    },
+    {
+      "device": "306A",
+      "protocol": "gps103",
+      "port": 5001,
+      "category": "car"
+    },
+    {
+      "device": "TK-102B",
+      "protocol": "gps103",
+      "port": 5001,
+      "category": "car"
+    },
+    {
+      "device": "GPS105B",
+      "protocol": "gps103",
+      "port": 5001,
+      "category": "car"
+    },
+    {
+      "device": "Coban GPS106",
+      "protocol": "gps103",
+      "port": 5001,
+      "category": "car"
+    },
+    {
+      "device": "Coban GPS107",
+      "protocol": "gps103",
+      "port": 5001,
+      "category": "car"
+    },
+    {
+      "device": "Coban GPS301",
+      "protocol": "gps103",
+      "port": 5001,
+      "category": "car"
+    },
+    {
+      "device": "Coban GPS302",
+      "protocol": "gps103",
+      "port": 5001,
+      "category": "car"
+    },
+    {
+      "device": "Coban GPS303",
+      "protocol": "gps103",
+      "port": 5001,
+      "category": "car"
+    }
+  ]
+}
