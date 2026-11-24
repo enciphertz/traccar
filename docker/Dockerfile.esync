@@ -1,0 +1,26 @@
+# syntax=docker/dockerfile:1
+# E-Sync telemetry engine, built straight from source (the other Dockerfiles
+# here package a release installer). Used by .github/workflows/deploy.yml.
+FROM eclipse-temurin:21-jdk AS build
+WORKDIR /src
+COPY . .
+RUN --mount=type=cache,target=/root/.gradle \
+    ./gradlew --no-daemon --quiet assemble -x test \
+ && mkdir /out \
+ && cp target/*.jar /out/tracker-server.jar \
+ && cp -r target/lib /out/lib
+
+FROM eclipse-temurin:21-jre-alpine
+RUN addgroup -g 10001 traccar && adduser -D -H -u 10001 -G traccar -h /opt/traccar traccar
+WORKDIR /opt/traccar
+COPY --from=build /out/ ./
+COPY schema ./schema
+COPY templates ./templates
+COPY setup/traccar.xml ./conf/traccar.xml
+RUN mkdir -p logs data media web && chown -R traccar:traccar logs data media web
+USER traccar
+# Configuration comes from the environment (CONFIG_USE_ENVIRONMENT_VARIABLES=true),
+# see deploy/server/bootstrap.sh in enciphertz/vms-engine for the keys.
+ENV JAVA_OPTS="-Xms256m -Xmx768m"
+EXPOSE 8082 5000-5200
+ENTRYPOINT ["sh", "-c", "exec java $JAVA_OPTS -jar tracker-server.jar conf/traccar.xml"]
