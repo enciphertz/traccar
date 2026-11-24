@@ -17,7 +17,7 @@ COPY --from=build /out/ ./
 COPY schema ./schema
 COPY templates ./templates
 COPY setup/traccar.xml ./conf/traccar.xml
-RUN mkdir -p logs data media web && chown -R traccar:traccar logs data media web
+RUN mkdir -p logs data media web override && chown -R traccar:traccar logs data media web override
 USER traccar
 # Configuration comes from the environment (CONFIG_USE_ENVIRONMENT_VARIABLES=true),
 # see deploy/server/bootstrap.sh in enciphertz/vms-engine for the keys.
