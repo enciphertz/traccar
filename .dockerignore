@@ -1,0 +1,10 @@
+.git/
+.github/
+.gradle/
+build/
+target/
+traccar-web/
+docker/
+*.md
+debug.xml
+test-positions-*.json

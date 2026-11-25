@@ -1,0 +1,189 @@
+name: Deploy
+
+# Same branch flow as Petrolink: feature -> develop -> uat -> main.
+#   uat  -> UAT on 213.136.88.10 (https://uat.api.esync.co.tz), on every push.
+#   main -> production on the same box (https://api.esync.co.tz), only when someone runs
+#           this workflow on main by hand (Actions -> Deploy -> Run workflow).
+#           The org's GitHub plan offers no required reviewers on private repos,
+#           so pressing Run workflow is the approval; a merge alone never ships.
+#
+# Each run builds this repo's Docker image, tags it with the commit sha, pushes
+# it to GHCR and asks the box to deploy it. The SSH key can run only
+# `esync-deploy <env> traccar <sha>`, which pulls with this job's
+# short-lived token, migrates, health-checks and rolls back on failure.
+# Every production deploy is followed by the `release` job: a vX.Y.Z tag, a
+# GitHub Release and the matching Jira version.
+# Server side: deploy/README.md in enciphertz/vms-engine (ESYNC-133).
+
+on:
+  push:
+    branches: [uat, main]
+  workflow_dispatch:
+    inputs:
+      version:
+        description: "Release version for a main deploy: v0.1.0, or v0.1.0-patch-release[-N] for a patch. Empty = bump the patch of the last release."
+        required: false
+        default: ""
+
+concurrency:
+  group: deploy-${{ github.ref_name }}
+  cancel-in-progress: false
+
+permissions:
+  contents: read
+  packages: write
+  deployments: write
+
+jobs:
+  deploy:
+    if: github.ref_name == 'uat' || (github.ref_name == 'main' && github.event_name == 'workflow_dispatch')
+    runs-on: ubuntu-latest
+    outputs:
+      previous: ${{ steps.deploy.outputs.previous }}
+    environment:
+      name: ${{ github.ref_name == 'main' && 'production' || 'uat' }}
+      url: ${{ github.ref_name == 'main' && 'https://api.esync.co.tz' || 'https://uat.api.esync.co.tz' }}
+    env:
+      COMPONENT: traccar
+      TARGET: ${{ github.ref_name == 'main' && 'prod' || 'uat' }}
+      PUBLIC_HEALTH_URL: ""  # no public probe; the box health-checks the container
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Image name
+        id: image
+        run: |
+          name="ghcr.io/${GITHUB_REPOSITORY,,}"
+          tag="$GITHUB_SHA"
+          : # same image for uat and prod
+          echo "ref=$name:$tag" >> "$GITHUB_OUTPUT"
+          echo "cache=$name:buildcache-$TARGET" >> "$GITHUB_OUTPUT"
+
+      - uses: docker/setup-buildx-action@v3
+
+      - uses: docker/login-action@v3
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ github.token }}
+
+      - name: Build and push
+        uses: docker/build-push-action@v6
+        with:
+          context: .
+          file: docker/Dockerfile.esync
+          push: true
+          tags: ${{ steps.image.outputs.ref }}
+          labels: |
+            org.opencontainers.image.source=${{ github.server_url }}/${{ github.repository }}
+            org.opencontainers.image.revision=${{ github.sha }}
+          cache-from: type=registry,ref=${{ steps.image.outputs.cache }}
+          cache-to: type=registry,ref=${{ steps.image.outputs.cache }},mode=max
+
+      - name: Deploy over SSH
+        id: deploy
+        env:
+          DEPLOY_HOST: ${{ secrets.DEPLOY_HOST }}
+          DEPLOY_SSH_KEY: ${{ secrets.DEPLOY_SSH_KEY }}
+          DEPLOY_KNOWN_HOSTS: ${{ secrets.DEPLOY_KNOWN_HOSTS }}
+          REGISTRY_TOKEN: ${{ github.token }}
+        run: |
+          install -m 700 -d ~/.ssh
+          printf '%s\n' "$DEPLOY_SSH_KEY" > ~/.ssh/deploy_key
+          chmod 600 ~/.ssh/deploy_key
+          printf '%s\n' "$DEPLOY_KNOWN_HOSTS" > ~/.ssh/known_hosts
+          # The token goes on stdin, never on the command line.
+          printf '%s\n' "$REGISTRY_TOKEN" | ssh -i ~/.ssh/deploy_key -o IdentitiesOnly=yes -o BatchMode=yes \
+            -o ServerAliveInterval=30 "deployer@$DEPLOY_HOST" "$TARGET $COMPONENT $GITHUB_SHA" | tee deploy.log
+          grep -q "^DEPLOYED=$GITHUB_SHA" deploy.log
+          echo "previous=$(sed -n 's/^PREVIOUS=//p' deploy.log | tail -1)" >> "$GITHUB_OUTPUT"
+
+      - name: Public health check
+        if: env.PUBLIC_HEALTH_URL != ''
+        env:
+          DEPLOY_HOST: ${{ secrets.DEPLOY_HOST }}
+        run: |
+          host=$(echo "$PUBLIC_HEALTH_URL" | sed -E 's#^https?://([^/]+).*#\1#')
+          # Until a hostname's DNS points at this box (production: at cutover),
+          # the public URL would reach some other server, so it proves nothing.
+          # The box already health-checked the containers before answering.
+          if ! getent ahostsv4 "$host" | awk '{print $1}' | grep -qx "$DEPLOY_HOST"; then
+            echo "::warning::$host does not resolve to the deploy box yet; public check skipped"
+            exit 0
+          fi
+          curl -fsS --retry 10 --retry-delay 3 --retry-all-errors -o /dev/null "$PUBLIC_HEALTH_URL"
+
+      - name: Update Jira issues
+        # Production's Jira update runs in the release job, with the version.
+        if: success() && github.ref_name != 'main'
+        env:
+          JIRA_BASE_URL: ${{ secrets.JIRA_BASE_URL }}
+          JIRA_EMAIL: ${{ secrets.JIRA_EMAIL }}
+          JIRA_API_TOKEN: ${{ secrets.JIRA_API_TOKEN }}
+        run: |
+          previous=$(sed -n 's/^PREVIOUS=//p' deploy.log | tail -1)
+          python3 .github/scripts/jira_deploy_note.py uat "$previous" "$GITHUB_SHA" \
+            "$GITHUB_SERVER_URL/$GITHUB_REPOSITORY/actions/runs/$GITHUB_RUN_ID" \
+            "${{ github.event.before }}"
+
+  release:
+    needs: deploy
+    if: github.ref_name == 'main'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Version and notes
+        id: notes
+        env:
+          MIGRATION_PATHS: ":(glob)schema/*.xml"
+        run: |
+          python3 .github/scripts/release_notes.py traccar \
+            "${{ needs.deploy.outputs.previous }}" "$GITHUB_SHA" "${{ inputs.version }}"
+
+      - name: Artifacts
+        env:
+          VERSION: ${{ steps.notes.outputs.version }}
+          PREVIOUS: ${{ needs.deploy.outputs.previous }}
+        run: |
+          mkdir -p dist
+          git archive --format=tar.gz --prefix="traccar-$VERSION/" \
+            -o "dist/traccar-$VERSION-source.tar.gz" "$GITHUB_SHA"
+          cat > "dist/traccar-$VERSION-manifest.json" <<JSON
+          {
+            "component": "traccar",
+            "version": "$VERSION",
+            "commit": "$GITHUB_SHA",
+            "previous_commit": "$PREVIOUS",
+            "image": "ghcr.io/${GITHUB_REPOSITORY,,}:${GITHUB_SHA}",
+            "deployed_at": "$(date -u +%FT%TZ)",
+            "run": "$GITHUB_SERVER_URL/$GITHUB_REPOSITORY/actions/runs/$GITHUB_RUN_ID"
+          }
+          JSON
+          (cd dist && sha256sum * > SHA256SUMS)
+
+      - name: Create GitHub release
+        env:
+          GH_TOKEN: ${{ github.token }}
+          VERSION: ${{ steps.notes.outputs.version }}
+        run: |
+          gh release create "$VERSION" dist/* --target "$GITHUB_SHA" \
+            --title "$VERSION" --notes-file release-notes.md --latest
+
+      - name: Jira release
+        env:
+          JIRA_BASE_URL: ${{ secrets.JIRA_BASE_URL }}
+          JIRA_EMAIL: ${{ secrets.JIRA_EMAIL }}
+          JIRA_API_TOKEN: ${{ secrets.JIRA_API_TOKEN }}
+          JIRA_RELEASE_VERSION: traccar ${{ steps.notes.outputs.version }}
+        run: |
+          python3 .github/scripts/jira_deploy_note.py production \
+            "${{ needs.deploy.outputs.previous }}" "$GITHUB_SHA" \
+            "$GITHUB_SERVER_URL/$GITHUB_REPOSITORY/actions/runs/$GITHUB_RUN_ID" \
+            "${{ github.event.before }}"
