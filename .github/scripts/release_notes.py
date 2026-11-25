@@ -33,6 +33,8 @@ TAG = re.compile(r"^v(\d+)\.(\d+)\.(\d+)$")
 RELEASE = re.compile(r"^v(\d+)\.(\d+)\.(\d+)(-patch-release(?:-([2-9]|[1-9]\d+))?)?$")
 KEY = re.compile(r"\bESYNC-\d+\b")
 JIRA_BROWSE = "https://enciphertz.atlassian.net/browse/"
+MAX_COMMITS_LISTED = 300
+MAX_BODY = 120_000
 
 
 def git(*args: str) -> str:
@@ -133,7 +135,13 @@ def main_args(argv: list[str]) -> int:
         lines += ["## Jira issues", ""] + [f"- [{k}]({JIRA_BROWSE}{k})" for k in keys] + [""]
     if migrations:
         lines += ["## Database migrations", ""] + [f"- `{m}`" for m in migrations] + [""]
-    lines += ["## Changes", ""] + [f"- {subject} (`{sha}`)" for sha, subject in commits] + [""]
+    # GitHub caps a release body at 125,000 characters; a first release of a long-lived fork
+    # (traccar) has tens of thousands of commits behind it. List the newest, count the rest.
+    shown = commits[:MAX_COMMITS_LISTED]
+    lines += ["## Changes", ""] + [f"- {subject} (`{sha}`)" for sha, subject in shown]
+    if len(commits) > len(shown):
+        lines.append(f"- … and {len(commits) - len(shown)} earlier commits (`git log {rng}`)")
+    lines.append("")
     lines += [
         "## Rollback",
         "",
@@ -141,8 +149,11 @@ def main_args(argv: list[str]) -> int:
         "`main`), or on the box: `echo $GHCR_TOKEN | esync-deploy prod <component> <sha>`. "
         "The previous images are kept on the box. Migrations are additive and are not reversed.",
     ]
+    body = "\n".join(lines) + "\n"
+    if len(body) > MAX_BODY:
+        body = body[:MAX_BODY] + "\n\n… (notes truncated to GitHub's release size limit)\n"
     with open("release-notes.md", "w") as handle:
-        handle.write("\n".join(lines) + "\n")
+        handle.write(body)
 
     with open(os.environ.get("GITHUB_OUTPUT", "/dev/stdout"), "a") as out:
         out.write(f"version={version}\nrange={rng}\n")
